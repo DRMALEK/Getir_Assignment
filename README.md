@@ -13,7 +13,7 @@ git clone
 npm init
 npm run start
 ```
-Note: Make sure to supply the database connection string via .dotenv
+Note: Make sure to supply the database connection string via dotenv
 
 # Running the app localy with nodemon:
 ```
