@@ -23,3 +23,6 @@ npm run start_dev
 ```
 npm test
 ```
+
+# Author:
+@DRMALEK
