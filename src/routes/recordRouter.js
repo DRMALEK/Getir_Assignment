@@ -18,7 +18,7 @@ function router() {
             if (!errors.isEmpty()) {
                 return res.status(422).json({ 
                     "code" : -1,
-                    "msg": errors.array()});
+                    "msg": errors.array()}).send();
             }
 
             (async function query() {
@@ -28,7 +28,13 @@ function router() {
                 const maxCount = req.body.maxCount;
 
                 // Do the query
-                const connection = await mongoose.createConnection(CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true });
+                const connection = await mongoose.createConnection(CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true }).catch(reason => {
+                    res.status(500).json({
+                        "code": -1,
+                        "msg": "Error while performing the database query to get the requested record or records",
+                    })
+                });
+                
                 const recordsCol = connection.db.collection('records');
 
                 recordsCol.aggregate([
