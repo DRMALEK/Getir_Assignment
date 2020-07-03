@@ -1,11 +1,18 @@
 const app = require('../../server');
 const superTest = require('supertest');
-const requst = superTest(app);
+const request = superTest(app);
 const mongoose = require('mongoose'); // MongoDB ODM
 const _ = require('lodash')
 
+var server;
+
+
 describe("Test the record endpoint Post functionality", () => {
-    it('Requesting an existing record or records by Post', async (done) => {
+    afterAll((done) => {
+        mongoose.disconnect(done);
+    });
+    
+    it('Requesting an existing record or records by Post', async () => {
         // request body to test
         const requetBody = {
             "startDate": "2016-01-26",
@@ -42,7 +49,7 @@ describe("Test the record endpoint Post functionality", () => {
             ]
         }
         // Send the post request
-        const res = await requst.post("/record").send(requetBody);
+        const res = await request.post("/record").send(requetBody);
         const toBeTested = JSON.parse(res.text)
 
         // To compare two arrays of objects by length and values ( order of objects is not important !)
@@ -73,12 +80,10 @@ describe("Test the record endpoint Post functionality", () => {
         ).toBeTruthy()
 
         // Check the status code
-        expect(res.statusCode).toBe(200);
-
-        done();
-    }, 12000);
+        expect(res.statusCode).toBe(200); 
+    })
     
-    it("requesting a non-existing record or records by Post", async (done) => {
+    it("requesting a non-existing record or records by Post", async () => {
         const requestBody = {
             "startDate": "2016-01-26",
             "endDate": "2018-02-02",
@@ -87,12 +92,12 @@ describe("Test the record endpoint Post functionality", () => {
             }
 
         const expected = {
-            "code": 404,
+            "code": -1,
             "msg": "The requested record or records was not found!"
         }
 
         // Send the Post reqest
-        const res = await requst.post("/record").send(requestBody);
+        const res = await request.post("/record").send(requestBody);
         const toBeTested = JSON.parse(res.text)
 
         // Check the body of the reponse
@@ -103,6 +108,5 @@ describe("Test the record endpoint Post functionality", () => {
     
         // Check the status code
         expect(res.statusCode).toBe(404);
-        done();
-    }, 12000);
+    })
 })

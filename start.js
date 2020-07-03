@@ -6,7 +6,6 @@ const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
     console.log(`listening on port on ${port}`);
 });
-
 // close the server and close the database connection on SIGINT signal
 process.on('SIGINT', () => {
     console.info('SIGINT signal received.');

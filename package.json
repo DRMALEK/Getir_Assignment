@@ -17,7 +17,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "jest",
+    "test": "jest --detectOpenHandles --runInBand",
     "start": "node start.js",
     "start_dev": "nodemon --signal SIGTERM start.js"
   },
