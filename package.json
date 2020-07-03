@@ -1,0 +1,37 @@
+{
+  "name": "getir_assignment",
+  "version": "1.0.0",
+  "description": "A RESTful API with a single endpoint that fetches the data from a MongoDB collection and return the results.",
+  "main": "start.js",
+  "dependencies": {
+    "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.0",
+    "jest": "^26.1.0",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.9.20",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4",
+    "supertest": "^4.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest",
+    "start": "node start.js",
+    "start_dev": "nodemon --signal SIGTERM start.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DRMALEK/Getir_Assignment.git"
+  },
+  "author": "malek baba",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DRMALEK/Getir_Assignment/issues"
+  },
+  "homepage": "https://github.com/DRMALEK/Getir_Assignment#readme",
+  "engines": {
+    "node": "12.6.2"
+  }
+}
