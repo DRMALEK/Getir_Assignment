@@ -132,4 +132,4 @@ npm test
 # Licence
 The MIT License (MIT)
 
-Copyright (c) 2020 malek baba
+Copyright (c) 2020 DRMALEK
