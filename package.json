@@ -32,6 +32,6 @@
   },
   "homepage": "https://github.com/DRMALEK/Getir_Assignment#readme",
   "engines": {
-    "node": "12.6.2"
+    "node": "12.x"
   }
 }
