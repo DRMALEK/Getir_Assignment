@@ -1,7 +1,7 @@
 # Getir_Assignment
 A RESTful API with a single endpoint that fetches the data from a MongoDB collection and return the results.
 
-# How to use the deployed app:
+# How to use the API:
 
  * **URL**
 
@@ -105,7 +105,7 @@ A RESTful API with a single endpoint that fetches the data from a MongoDB collec
   
   ```
   
-# Running the app localy
+# Running the API localy 
 
 ```
 git init https://github.com/DRMALEK/Getir_Assignment.git
@@ -113,9 +113,11 @@ git clone
 npm init
 npm run start
 ```
-Note: Make sure to supply the database connection string via dotenv
+The API will run on the localhost with port 3000
 
-# Running the app localy with nodemon
+*Note: Make sure to supply the database connection string via dotenv*
+
+# Running the API localy with nodemon
 ```
 npm run start_dev
 ```
