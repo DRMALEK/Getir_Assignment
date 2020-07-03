@@ -17,4 +17,3 @@ const recordRouter = require('./src/routes/recordRouter')();
 app.use('/record', recordRouter);
 
 module.exports = app;
-
