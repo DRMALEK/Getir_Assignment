@@ -121,10 +121,13 @@ The API will run on the localhost with port 3000
 ```
 npm run start_dev
 ```
-# Testing the app
+# Testing the API
 ```
 npm test
 ```
+# Deploying the API
+
+You can deploy the API on any platform like Heroku or AWS and make sure to set the `CONNECTION_STRING` environment variable.
 
 # Author
 @DRMALEK
