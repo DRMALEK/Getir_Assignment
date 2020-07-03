@@ -5,7 +5,7 @@ A RESTful API with a single endpoint that fetches the data from a MongoDB collec
 
  * **URL**
 
-   `malek-getir-assignment.herokuapp.com`
+   `malek-getir-assignment.herokuapp.com/record`
 
 * **Method:**
   
