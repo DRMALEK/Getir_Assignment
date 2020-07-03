@@ -128,3 +128,8 @@ npm test
 
 # Author
 @DRMALEK
+
+# Licence
+The MIT License (MIT)
+
+Copyright (c) 2020 malek baba
